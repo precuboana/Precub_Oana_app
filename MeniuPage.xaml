@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Precub_Oana_app.MeniuPage"
+             Title="Meniu">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="10">
+
+            <!-- Formular pentru adăugare/modificare meniu -->
+            <Entry x:Name="DenumireMeniuEntry" Placeholder="Denumire" />
+            <Entry x:Name="PretMeniuEntry" Placeholder="Pret" Keyboard="Numeric"/>
+            <Button Text="Salvează Meniu" Clicked="OnSaveMeniuClicked" />
+
+            <!-- Listă pentru a afișa meniurile existente -->
+            <ListView x:Name="MeniuriListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Denumire}" Detail="{Binding Pret}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

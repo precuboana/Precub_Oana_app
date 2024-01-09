@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Precub_Oana_app.CategoriePage"
+             Title="Categorii">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="10">
+
+            <!-- Formular pentru adăugare/modificare categorie -->
+            <Entry x:Name="NumeCategorieEntry" Placeholder="Nume Categorie" />
+            <Button Text="Salvează Categorie" Clicked="OnSaveCategorieClicked" />
+
+            <!-- Listă pentru a afișa categoriile existente -->
+            <ListView x:Name="CategoriiListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nume}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Precub_Oana_app.ClientPage"
+             Title="Clienti">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="10">
+
+            <!-- Formular pentru adăugare/modificare client -->
+            <Entry x:Name="NumeClientEntry" Placeholder="Nume" />
+            <Entry x:Name="EmailClientEntry" Placeholder="Email" />
+            <Button Text="Salvează Client" Clicked="OnSaveClientClicked" />
+
+            <!-- Listă pentru a afișa clienții existenți -->
+            <ListView x:Name="ClientiListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nume}" Detail="{Binding Email}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

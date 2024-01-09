@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Precub_Oana_app.LocatiePage"
+             Title="Locatii">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="10">
+
+            <!-- Formular pentru adăugare/modificare locație -->
+            <Entry x:Name="NumeLocatieEntry" Placeholder="Nume Locație" />
+            <Entry x:Name="AdresaLocatieEntry" Placeholder="Adresă" />
+            <Button Text="Salvează Locație" Clicked="OnSaveLocatieClicked" />
+
+            <!-- Listă pentru a afișa locațiile existente -->
+            <ListView x:Name="LocatiiListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nume}" Detail="{Binding Adresa}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

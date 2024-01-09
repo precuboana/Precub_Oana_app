@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Precub_Oana_app.RezervarePage"
+             Title="Rezervari">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="10">
+
+            <!-- Formular pentru adăugare/modificare rezervare -->
+            <Entry x:Name="DataRezervariiEntry" Placeholder="Data Rezervării" />
+            <Entry x:Name="OraRezervariiEntry" Placeholder="Ora Rezervării" />
+            <Button Text="Salvează Rezervarea" Clicked="OnSaveRezervareClicked" />
+
+            <!-- Listă pentru a afișa rezervările existente -->
+            <ListView x:Name="RezervariListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding DataRezervarii}" Detail="{Binding OraRezervarii}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
